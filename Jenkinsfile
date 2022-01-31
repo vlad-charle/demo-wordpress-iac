@@ -1,5 +1,4 @@
 pipeline {
-
   environment {
           AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
           AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
@@ -8,18 +7,15 @@ pipeline {
   agent any
 
   stages {
-
     stage('terraform init') {
       steps {
             sh 'terraform init'
       }
     }
-
     stage('terraform action') {
       steps {
             sh 'terraform ${action} -auto-approve'
       }
     }
-    
   }
 }

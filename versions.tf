@@ -1,4 +1,12 @@
 terraform {
+    backend "s3" {
+    bucket = "vladsanyuk-terraform-state"
+    encrypt = true
+    key    = "terraform-state/terraform.tfstate"
+    region = var.region
+    dynamodb_table = "vladsanyuk-terraform-state-dynamodb"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

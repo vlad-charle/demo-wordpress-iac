@@ -3,7 +3,7 @@ terraform {
     bucket = "vladsanyuk-terraform-state"
     encrypt = true
     key    = "terraform-state/terraform.tfstate"
-    region = var.region
+    region = "us-east-1"
     dynamodb_table = "vladsanyuk-terraform-state-dynamodb"
   }
 
